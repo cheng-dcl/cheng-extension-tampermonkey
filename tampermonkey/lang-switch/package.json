@@ -1,0 +1,15 @@
+{
+  "name": "[cheng] - 文档中英切换",
+  "private": true,
+  "version": "0.0.1",
+  "description": "自动将.NET和Unity文档和Python的英文链接重定向到中文链接；通过快捷键 Ctrl+Shift+L 全局控制是否启用跳转。快捷键在所有learn.microsoft.com和docs.unity3d.com和docs.python.org页面下生效。",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@cheng/util": "workspace:*"
+  }
+}

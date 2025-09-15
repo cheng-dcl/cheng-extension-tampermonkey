@@ -1,0 +1,35 @@
+{
+  "name": "cheng-extension-tampermonkey",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Chrom Extension & Tampermonkey scripts",
+  "author": {
+    "name": "cheng",
+    "url": "https://github.com/cheng-dcl"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cheng-dcl/cheng-extension-tampermonkey.git"
+  },
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "dev-all": "pnpm --filter=./tampermonkey/* run dev",
+    "build-all": "pnpm --filter=./tampermonkey/* run build",
+    "dev-test": "pnpm -C=./tampermonkey/_test run dev",
+    "build-test": "pnpm -C=./tampermonkey/_test run build",
+    "dev-jx": "pnpm -C=./tampermonkey/vedio-jx run dev",
+    "build-jx": "pnpm -C=./tampermonkey/vedio-jx run build",
+    "dev-lang": "pnpm -C=./tampermonkey/lang-switch run dev",
+    "build-lang": "pnpm -C=./tampermonkey/lang-switch run build"
+  },
+  "devDependencies": {
+    "@types/node": "^24.4.0",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.5",
+    "vite-plugin-monkey": "^7.1.1"
+  }
+}

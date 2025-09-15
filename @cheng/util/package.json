@@ -1,0 +1,8 @@
+{
+  "name": "@cheng/util",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Chrom Extension & Tampermonkey util scripts",
+  "main": "src/index.ts",
+  "type": "module"
+}

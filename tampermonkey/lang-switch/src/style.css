@@ -1,0 +1,25 @@
+.custom-toast {
+  position: fixed;
+  top: 0;
+  left: 45%;
+  transform: translateY(50px);
+  padding: 15px 25px;
+  border-radius: 5px;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.custom-toast.visible {
+  opacity: 1;
+  transform: translateY(100px);
+}
+.custom-toast.enabled {
+  background-color: #4caf50;
+}
+.custom-toast.disabled {
+  background-color: #f44336;
+}
