@@ -1,26 +1,11 @@
-import { monkey } from "@cheng/util";
-import path from "path";
-import pkg from "./package.json";
-import { type MonkeyUserScript } from "vite-plugin-monkey";
+const match: string[] = ["*://learn.microsoft.com/*", "*://docs.unity3d.com/*", "*://docs.python.org/*"];
 
-export const matches: string[] = [
-  "*://learn.microsoft.com/*",
-  "*://docs.unity3d.com/*",
-  "*://docs.python.org/*",
-];
+// const require: string[] = [];
+// const include: string[] = [];
+// const exclude: string[] = [];
+// const resource: { [key: string]: string } = {};
+// const connect: string[] = [];
 
-export const downloadURL: string = monkey.getUserScriptUrl(
-  path.basename(__dirname)
-);
-export const updateURL: string = downloadURL;
-
-const RootUserScript = await monkey.getRootUserScript();
-
-export const UserScript: MonkeyUserScript = {
-  ...RootUserScript,
-  version: pkg.version,
-  description: pkg.description,
-  match: matches,
-  downloadURL: downloadURL,
-  updateURL: updateURL,
+export const extraUserScript = {
+  match,
 };

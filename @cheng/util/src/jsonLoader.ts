@@ -1,10 +1,7 @@
 // jsonLoader.ts
 export async function loadJson<T = unknown>(path: string): Promise<T> {
   // 检测是否在 Node 环境
-  const isNode =
-    typeof process !== "undefined" &&
-    process.versions != null &&
-    process.versions.node != null;
+  const isNode = typeof process !== "undefined" && process.versions != null && process.versions.node != null;
 
   if (isNode) {
     // console.log("Node 环境 > LoadJson" + path);

@@ -56,20 +56,16 @@ const redirectRules = [
   },
   {
     name: "Unity",
-    pattern:
-      /https:\/\/docs\.unity3d\.com\/(\d+\.\d+)\/Documentation\/ScriptReference\/(.*)/,
+    pattern: /https:\/\/docs\.unity3d\.com\/(\d+\.\d+)\/Documentation\/ScriptReference\/(.*)/,
     replacement: "https://docs.unity3d.com/cn/current/ScriptReference/$2",
-    reversePattern:
-      /https:\/\/docs\.unity3d\.com\/cn\/current\/ScriptReference\/(.*)/,
-    reverseReplacement:
-      "https://docs.unity3d.com/2022.3/Documentation/ScriptReference/$1", // 这里写死了版本号，可优化
+    reversePattern: /https:\/\/docs\.unity3d\.com\/cn\/current\/ScriptReference\/(.*)/,
+    reverseReplacement: "https://docs.unity3d.com/2022.3/Documentation/ScriptReference/$1", // 这里写死了版本号，可优化
   },
   {
     name: "Unity",
     pattern: /https:\/\/docs\.unity3d\.com\/ScriptReference\/(.*)/,
     replacement: "https://docs.unity3d.com/cn/current/ScriptReference/$1",
-    reversePattern:
-      /https:\/\/docs\.unity3d\.com\/cn\/current\/ScriptReference\/(.*)/,
+    reversePattern: /https:\/\/docs\.unity3d\.com\/cn\/current\/ScriptReference\/(.*)/,
     reverseReplacement: "https://docs.unity3d.com/ScriptReference/$1",
   },
   {
@@ -91,9 +87,7 @@ document.addEventListener("keydown", (event) => {
     isRedirectEnabled = !isRedirectEnabled;
     GM_setValue(KEY, isRedirectEnabled);
     UpdateStatus();
-    const message = `${curName}文档自动切换为中文已${
-      isRedirectEnabled ? "启用" : "禁用"
-    }`;
+    const message = `${curName}文档自动切换为中文已${isRedirectEnabled ? "启用" : "禁用"}`;
     //alert(message);
     showToast(message, isRedirectEnabled);
   }
@@ -121,10 +115,7 @@ function UpdateStatus() {
       }
     } else {
       if (rule.reversePattern && rule.reversePattern.test(currentUrl)) {
-        const newUrl = currentUrl.replace(
-          rule.reversePattern,
-          rule.reverseReplacement
-        );
+        const newUrl = currentUrl.replace(rule.reversePattern, rule.reverseReplacement);
         if (newUrl !== currentUrl) {
           window.location.href = newUrl;
           curName = rule.name;

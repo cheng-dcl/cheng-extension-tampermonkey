@@ -1,0 +1,15 @@
+{
+  "name": "tampermonkey tamplate",
+  "private": true,
+  "version": "0.0.0",
+  "description": "tampermonkey tamplate by cheng",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@cheng/util": "workspace:*"
+  }
+}

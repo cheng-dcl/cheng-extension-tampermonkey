@@ -8,6 +8,6 @@ const appName = path.basename(__dirname);
 const userScript = getUserScript(appName, pkg, extraUserScript);
 
 export default defineConfig(({ command }) => {
-  const options: CustomViteOptions = { command, appName, userScript };
+  const options: CustomViteOptions = { command, appName, userScript }
   return customViteConfig(options);
 });
